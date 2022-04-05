@@ -5,4 +5,4 @@ network=$(ifconfig $(nmcli device status | grep -e  [^dis]connected | cut -d " "
     for ip in $(seq 1 254); do
         ping -c 1 $network.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
     done
-sleep 1
+sleep 3
